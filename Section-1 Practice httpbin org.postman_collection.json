@@ -110,7 +110,7 @@
 							"})\r",
 							"\r",
 							"console.log(\"Setting global variable uuid\");\r",
-							"console.log(\" value of uuid is \"+ pm.response.json.uuid);\r",
+							"console.log(\" value of uuid is \"+ pm.response.json().uuid);\r",
 							"let responsev = pm.response.json();\r",
 							"pm.globals.set(\"uuid\", responsev.uuid);"
 						],
