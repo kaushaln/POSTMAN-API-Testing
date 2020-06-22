@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "5a4b1913-89d4-4c2e-b30d-072a4b976bfc",
+		"name": "httpbin org",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "normal request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1df4bfe5-125f-4a66-b37c-cf25de5c5bbd",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://httpbin.org",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Normal request with Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c6f457c5-f2e8-491b-ad20-f5af629e7fcc",
+						"exec": [
+							"pm.test(\" Check for Status code is 200 or not\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://httpbin.org",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Httpbin Get Method",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b5f4be7b-e072-4fd8-bf58-7119c6cc4145",
+						"exec": [
+							"pm.test(\"Check whether Response code is 200 or not.\",function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://httpbin.org/get",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Httpbin UUID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "19919308-07b9-48ae-bff3-b43a7381bad3",
+						"exec": [
+							"pm.test(\"Check whether response code is 200 or not\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"\r",
+							"})\r",
+							"\r",
+							"console.log(\"Setting global variable uuid\");\r",
+							"console.log(\" value of uuid is \"+ pm.response.json.uuid);\r",
+							"let responsev = pm.response.json();\r",
+							"pm.globals.set(\"uuid\", responsev.uuid);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://httpbin.org/uuid",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"uuid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Httpbin Post method 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a2297e9c-dfe7-4ece-876d-81bdc798c3ba",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "639f5826-d789-4d0f-9d50-2e2cba8d407f",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"city\":\"Ahmedabad\",\r\n    \"uuid\": \"{{uuid}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://httpbin.org/post?firstname=kaushal&lastname=nayak",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "firstname",
+							"value": "kaushal"
+						},
+						{
+							"key": "lastname",
+							"value": "nayak"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Httpbin post method with text as Raw data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Hello This is raw type text data with body."
+				},
+				"url": {
+					"raw": "https://httpbin.org/post",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
