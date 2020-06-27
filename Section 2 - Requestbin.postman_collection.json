@@ -1,0 +1,597 @@
+{
+	"info": {
+		"_postman_id": "e033ebcf-e2cc-488f-949f-e99e823881ad",
+		"name": "Requestbin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Simple Request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "foo",
+						"value": "bar",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://requestbin.net/r/tsf4p5ts",
+					"protocol": "http",
+					"host": [
+						"requestbin",
+						"net"
+					],
+					"path": [
+						"r",
+						"tsf4p5ts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with Parameter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://requestbin.net/r/tsf4p5ts?foo=bar",
+					"protocol": "http",
+					"host": [
+						"requestbin",
+						"net"
+					],
+					"path": [
+						"r",
+						"tsf4p5ts"
+					],
+					"query": [
+						{
+							"key": "foo",
+							"value": "bar"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with Multiple Parameters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://requestbin.net/r/tsf4p5ts?foo=bar&ParamCount=Multiple&AcceptedMultipleParam=1",
+					"protocol": "http",
+					"host": [
+						"requestbin",
+						"net"
+					],
+					"path": [
+						"r",
+						"tsf4p5ts"
+					],
+					"query": [
+						{
+							"key": "foo",
+							"value": "bar"
+						},
+						{
+							"key": "ParamCount",
+							"value": "Multiple"
+						},
+						{
+							"key": "AcceptedMultipleParam",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with Parameter and Added with One more header",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Do-Not-Track",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://requestbin.net/r/tsf4p5ts?Foo=Bar",
+					"protocol": "http",
+					"host": [
+						"requestbin",
+						"net"
+					],
+					"path": [
+						"r",
+						"tsf4p5ts"
+					],
+					"query": [
+						{
+							"key": "Foo",
+							"value": "Bar"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with Raw Param",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://requestbin.net/r/tsf4p5ts?Name=Kaushal&Surname=nayak&full name=kaushal nayak",
+					"protocol": "http",
+					"host": [
+						"requestbin",
+						"net"
+					],
+					"path": [
+						"r",
+						"tsf4p5ts"
+					],
+					"query": [
+						{
+							"key": "Name",
+							"value": "Kaushal"
+						},
+						{
+							"key": "Surname",
+							"value": "nayak"
+						},
+						{
+							"key": "full name",
+							"value": "kaushal nayak"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with Encoded Param",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://requestbin.net/r/tsf4p5ts?Name=Kaushal&Surname=nayak&full name=kaushal%20nayak",
+					"protocol": "http",
+					"host": [
+						"requestbin",
+						"net"
+					],
+					"path": [
+						"r",
+						"tsf4p5ts"
+					],
+					"query": [
+						{
+							"key": "Name",
+							"value": "Kaushal"
+						},
+						{
+							"key": "Surname",
+							"value": "nayak"
+						},
+						{
+							"key": "full name",
+							"value": "kaushal%20nayak"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request to see the image",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://images.unsplash.com/photo-1494548162494-384bba4ab999?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+					"protocol": "https",
+					"host": [
+						"images",
+						"unsplash",
+						"com"
+					],
+					"path": [
+						"photo-1494548162494-384bba4ab999"
+					],
+					"query": [
+						{
+							"key": "ixlib",
+							"value": "rb-1.2.1"
+						},
+						{
+							"key": "ixid",
+							"value": "eyJhcHBfaWQiOjEyMDd9"
+						},
+						{
+							"key": "w",
+							"value": "1000"
+						},
+						{
+							"key": "q",
+							"value": "80"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request to fetch a webpage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.google.com",
+					"protocol": "https",
+					"host": [
+						"www",
+						"google",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with Encoded Param and Body",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Test",
+							"value": "Test%20value",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://requestbin.net/r/tsf4p5ts?Foo=bar%20bar",
+					"protocol": "http",
+					"host": [
+						"requestbin",
+						"net"
+					],
+					"path": [
+						"r",
+						"tsf4p5ts"
+					],
+					"query": [
+						{
+							"key": "Foo",
+							"value": "bar%20bar"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with Body data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Full name",
+							"value": "Kaushal%20Nayak",
+							"type": "text"
+						},
+						{
+							"key": "Address",
+							"value": "Ahmedabad%2C%20Gujarat%2C%20India",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://requestbin.net/r/tsf4p5ts",
+					"protocol": "http",
+					"host": [
+						"requestbin",
+						"net"
+					],
+					"path": [
+						"r",
+						"tsf4p5ts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with Form data and image file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Buzo",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/QALeader/Pictures/Saved Pictures/bull dog.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://requestbin.net/r/tsf4p5ts",
+					"protocol": "http",
+					"host": [
+						"requestbin",
+						"net"
+					],
+					"path": [
+						"r",
+						"tsf4p5ts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with URL encode type body",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fullname",
+							"value": "Kaushal%20Nayak",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "33",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://requestbin.net/r/tsf4p5ts",
+					"protocol": "http",
+					"host": [
+						"requestbin",
+						"net"
+					],
+					"path": [
+						"r",
+						"tsf4p5ts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with body type as Raw(Text) ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Hello world",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://requestbin.net/r/tsf4p5ts",
+					"protocol": "http",
+					"host": [
+						"requestbin",
+						"net"
+					],
+					"path": [
+						"r",
+						"tsf4p5ts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with body type as Raw(javascript)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "console.log(\"Hello world\")",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://requestbin.net/r/tsf4p5ts",
+					"protocol": "http",
+					"host": [
+						"requestbin",
+						"net"
+					],
+					"path": [
+						"r",
+						"tsf4p5ts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with Body type as Raw(Json)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Kaushal Nayak\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://requestbin.net/r/tsf4p5ts",
+					"protocol": "http",
+					"host": [
+						"requestbin",
+						"net"
+					],
+					"path": [
+						"r",
+						"tsf4p5ts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(PUT) Request with body type as Json format ",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\":20,\r\n    \"Experience\":0,\r\n    \"Expectation\":\"a lot\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://requestbin.net/r/tsf4p5ts",
+					"protocol": "http",
+					"host": [
+						"requestbin",
+						"net"
+					],
+					"path": [
+						"r",
+						"tsf4p5ts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(Put) Request with body type as Raw(HTML)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<html>\r\n    <head>\r\n        <Title>\r\n            Hello World\r\n        </Title>\r\n    </head>\r\n    <body>\r\n        <p> Title of page is hello world </p>\r\n    <body>    \r\n</html>    ",
+					"options": {
+						"raw": {
+							"language": "html"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://requestbin.net/r/tsf4p5ts",
+					"protocol": "http",
+					"host": [
+						"requestbin",
+						"net"
+					],
+					"path": [
+						"r",
+						"tsf4p5ts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(Patch) Request with Body type as Raw(XML)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<note>\r\n<to>Tove</to>\r\n<from>Jani</from>\r\n<heading>Reminder</heading>\r\n<body>Don't forget me this weekend!</body>\r\n</note>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://requestbin.net/r/tsf4p5ts",
+					"protocol": "http",
+					"host": [
+						"requestbin",
+						"net"
+					],
+					"path": [
+						"r",
+						"tsf4p5ts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(Patch) Request with body type as Binary",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/QALeader/Downloads/RandomNumbers"
+					}
+				},
+				"url": {
+					"raw": "http://requestbin.net/r/tsf4p5ts",
+					"protocol": "http",
+					"host": [
+						"requestbin",
+						"net"
+					],
+					"path": [
+						"r",
+						"tsf4p5ts"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

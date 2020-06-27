@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "63bcaf30-db64-4535-a7cf-1d946faa45fa",
+		"name": "Assignment1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Simple API call without Any data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0e960eea-07e5-4025-b528-bc682b0a5ac7",
+						"exec": [
+							"console.log(\"Response Status is : 401 Unauthorized\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nytimes.com/svc/books/v3/lists.json",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nytimes",
+						"com"
+					],
+					"path": [
+						"svc",
+						"books",
+						"v3",
+						"lists.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API call with api-key",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d6e59e3d-d198-426f-a9f6-b9e1d8997906",
+						"exec": [
+							"console.log(\"Status code : 400 Bad Request is shown\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nytimes.com/svc/books/v3/lists.json?api-key=",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nytimes",
+						"com"
+					],
+					"path": [
+						"svc",
+						"books",
+						"v3",
+						"lists.json"
+					],
+					"query": [
+						{
+							"key": "api-key",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API call with Api-key and list parameter along with value",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "84b8fdc5-046a-4347-9dcf-c7d17e5b4b68",
+						"exec": [
+							"console.log(\"status code : 200 OK is shown\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nytimes.com/svc/books/v3/lists.json?api-key=&list=10",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nytimes",
+						"com"
+					],
+					"path": [
+						"svc",
+						"books",
+						"v3",
+						"lists.json"
+					],
+					"query": [
+						{
+							"key": "api-key",
+							"value": ""
+						},
+						{
+							"key": "list",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API call with Api-key and with more parameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "84b8fdc5-046a-4347-9dcf-c7d17e5b4b68",
+						"exec": [
+							"console.log(\"status code : 200 OK is shown\")\r",
+							"console.log(\"User-Agent field value of Request header is : PostmanRuntime/7.26.1 \")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nytimes.com/svc/books/v3/lists.json?api-key=&list=Combined Print and E-Book Nonfiction&published-date=2020-07-05&rank=1&rank-last-week=3",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nytimes",
+						"com"
+					],
+					"path": [
+						"svc",
+						"books",
+						"v3",
+						"lists.json"
+					],
+					"query": [
+						{
+							"key": "api-key",
+							"value": ""
+						},
+						{
+							"key": "list",
+							"value": "Combined Print and E-Book Nonfiction"
+						},
+						{
+							"key": "published-date",
+							"value": "2020-07-05"
+						},
+						{
+							"key": "rank",
+							"value": "1"
+						},
+						{
+							"key": "rank-last-week",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nytimes.com/svc/books/v3/lists.json?api-key=&list=Combined Print and E-Book Nonfiction",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nytimes",
+						"com"
+					],
+					"path": [
+						"svc",
+						"books",
+						"v3",
+						"lists.json"
+					],
+					"query": [
+						{
+							"key": "api-key",
+							"value": ""
+						},
+						{
+							"key": "list",
+							"value": "Combined Print and E-Book Nonfiction"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nytimes",
+						"com"
+					],
+					"path": [
+						"svc",
+						"books",
+						"v3",
+						"lists",
+						"names.json"
+					],
+					"query": [
+						{
+							"key": "api-key",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
